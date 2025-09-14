@@ -13,7 +13,7 @@ if SQLALCHEMY_DATABASE_URL and "sslmode" not in SQLALCHEMY_DATABASE_URL:
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL,
     pool_pre_ping=True,                   # auto reconnect if dropped
-    connect_args={"sslmode": "require"}   # enforce SSL
+   
 )
 
 SessionLocal = sessionmaker(autocommit=False, autoflush = False, bind = engine)
